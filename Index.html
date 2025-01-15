@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathExplorer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .search-container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.2rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>MathExplorer</h1>
+    <div class="search-container">
+        <input type="text" id="searchCode" placeholder="Digite o código da matéria...">
+        <button onclick="redirectToPage()">Buscar</button>
+    </div>
+    <footer>
+        &copy; 2025 MathExplorer - Todos os direitos reservados
+    </footer>
+
+    <script>
+        function redirectToPage() {
+            const searchCode = document.getElementById('searchCode').value.trim();
+
+            // Verifica se um código foi inserido
+            if (searchCode) {
+                // Redireciona para a página correspondente ao código
+                window.location.href = `${searchCode}.html`;
+            } else {
+                alert('Por favor, insira um código válido.');
+            }
+        }
+    </script>
+</body>
+</html>
